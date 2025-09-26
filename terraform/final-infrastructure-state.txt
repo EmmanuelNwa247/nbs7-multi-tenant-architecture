@@ -1,0 +1,57 @@
+eks_info = {
+  "cluster_endpoint" = "https://3D5F002155DD51970517E7B9E0FF409B.gr7.us-east-1.eks.amazonaws.com"
+  "cluster_name" = "nbs7-shared-dev-eks"
+}
+kafka_topic_configuration = {
+  "dev1" = {
+    "bootstrap_servers" = "b-1.nbs7testshareddevmskcl.x7117h.c9.kafka.us-east-1.amazonaws.com:9092,b-2.nbs7testshareddevmskcl.x7117h.c9.kafka.us-east-1.amazonaws.com:9092"
+    "consumer_group_prefix" = "dev1-"
+    "namespace" = "dev1"
+    "topics" = {
+      "audit_logs" = "dev1.audit-logs"
+      "data_sync" = "dev1.data-sync"
+      "error_events" = "dev1.error-events"
+      "notifications" = "dev1.notifications"
+      "user_events" = "dev1.user-events"
+    }
+  }
+  "dev2" = {
+    "bootstrap_servers" = "b-1.nbs7testshareddevmskcl.x7117h.c9.kafka.us-east-1.amazonaws.com:9092,b-2.nbs7testshareddevmskcl.x7117h.c9.kafka.us-east-1.amazonaws.com:9092"
+    "consumer_group_prefix" = "dev2-"
+    "namespace" = "dev2"
+    "topics" = {
+      "audit_logs" = "dev2.audit-logs"
+      "data_sync" = "dev2.data-sync"
+      "error_events" = "dev2.error-events"
+      "notifications" = "dev2.notifications"
+      "user_events" = "dev2.user-events"
+    }
+  }
+  "dev3" = {
+    "bootstrap_servers" = "b-1.nbs7testshareddevmskcl.x7117h.c9.kafka.us-east-1.amazonaws.com:9092,b-2.nbs7testshareddevmskcl.x7117h.c9.kafka.us-east-1.amazonaws.com:9092"
+    "consumer_group_prefix" = "dev3-"
+    "namespace" = "dev3"
+    "topics" = {
+      "audit_logs" = "dev3.audit-logs"
+      "data_sync" = "dev3.data-sync"
+      "error_events" = "dev3.error-events"
+      "notifications" = "dev3.notifications"
+      "user_events" = "dev3.user-events"
+    }
+  }
+}
+msk_info = {
+  "bootstrap_brokers" = "b-1.nbs7testshareddevmskcl.x7117h.c9.kafka.us-east-1.amazonaws.com:9092,b-2.nbs7testshareddevmskcl.x7117h.c9.kafka.us-east-1.amazonaws.com:9092"
+  "cluster_arn" = "arn:aws:kafka:us-east-1:217417575192:cluster/nbs7-test-shared-dev-msk-cluster/58a4329a-9956-4089-ba7f-de66e5722a4e-9"
+}
+vpc_info = {
+  "private_subnets" = [
+    "subnet-0db2ac894ff6a33a9",
+    "subnet-01bcc35948783bc5f",
+  ]
+  "public_subnets" = [
+    "subnet-05020bf36a237e995",
+    "subnet-0fb6e21d1e82fda29",
+  ]
+  "vpc_id" = "vpc-0e4556644293f8f43"
+}
