@@ -11,8 +11,8 @@ variable "create_shared_msk" {
 }
 
 variable "environment_type" {
-  type        = string
-  default     = "development"
+  type    = string
+  default = "development"
 }
 
 variable "msk_subnet_ids" {
@@ -20,8 +20,8 @@ variable "msk_subnet_ids" {
 }
 
 variable "msk_ebs_volume_size" {
-  type        = number
-  default     = 50
+  type    = number
+  default = 50
 }
 
 variable "vpc_id" {
