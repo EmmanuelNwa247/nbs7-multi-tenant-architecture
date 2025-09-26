@@ -1,28 +1,28 @@
 locals {
-  module_name = "shared-msk"
+  module_name          = "shared-msk"
   module_serial_number = "2024092301"
   # Sized for multiple dev environments
   instance_type  = var.environment_type == "development" ? "kafka.m5.large" : "kafka.m5.xlarge"
-  instance_count = var.environment_type == "development" ? 2 : 4 
+  instance_count = var.environment_type == "development" ? 2 : 4
 }
 
 # MSK Cluster for shared dev environments
 resource "aws_msk_cluster" "shared_dev" {
-  count = var.create_shared_msk ? 1 : 0
+  count                  = var.create_shared_msk ? 1 : 0
   cluster_name           = "${var.resource_prefix}-shared-dev-msk-cluster"
-  kafka_version         = var.kafka_version
+  kafka_version          = var.kafka_version
   number_of_broker_nodes = local.instance_count
 
   configuration_info {
     arn      = aws_msk_configuration.shared_dev_config[0].arn
-    revision = 1 
+    revision = 1
   }
 
   broker_node_group_info {
     instance_type   = local.instance_type
     client_subnets  = var.msk_subnet_ids
     security_groups = [aws_security_group.shared_msk_sg[0].id]
-    
+
     storage_info {
       ebs_storage_info {
         volume_size = var.msk_ebs_volume_size

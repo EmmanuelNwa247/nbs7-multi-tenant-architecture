@@ -18,6 +18,8 @@ locals {
 resource "kubernetes_namespace" "dev_environments" {
   for_each = toset(local.environments)
 
+  depends_on = [module.shared_eks]
+
   metadata {
     name = each.value # Use each.value for sets, not each.key
 
